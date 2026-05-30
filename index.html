@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUNTIK SOSMED FERZ</title>
+    <style>
+        body { font-family: sans-serif; background: #f4f4f4; padding: 20px; }
+        .container { max-width: 400px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h2 { text-align: center; color: #333; }
+        .menu-btn { display: block; width: 100%; padding: 15px; margin: 10px 0; background: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer; text-align: center; }
+        .hidden { display: none; }
+        .payment-info { background: #e9ecef; padding: 10px; border-radius: 5px; margin-top: 10px; font-size: 0.9em; }
+    </style>
+</head>
+<body>
+
+<div class="container" id="main-menu">
+    <h2>SUNTIK SOSMED FERZ</h2>
+    <button class="menu-btn" onclick="showMenu('tiktok-menu')">TIKTOK</button>
+    <button class="menu-btn" onclick="showMenu('ig-menu')">INSTAGRAM</button>
+</div>
+
+<div class="container hidden" id="tiktok-menu">
+    <h2>TikTok Services</h2>
+    <p>1. Views: 1.000 / Rp2.000</p>
+    <p>2. Likes: 1.000 / Rp8.000</p>
+    <button class="menu-btn" onclick="backToMenu()">Kembali ke Menu</button>
+</div>
+
+<div class="container hidden" id="ig-menu">
+    <h2>Instagram Services</h2>
+    <p>1. Followers: 1.000 / Rp7.000</p>
+    <button class="menu-btn" onclick="backToMenu()">Kembali ke Menu</button>
+</div>
+
+<div class="container">
+    <h3>Metode Pembayaran</h3>
+    <div class="payment-info">
+        <p><b>QRIS:</b> <a href="https://files.catbox.moe/6ljymq.jpeg" target="_blank">Lihat QRIS</a></p>
+        <p><b>DANA:</b> 082219893697 (A/N PIAH)</p>
+        <p>Upload bukti TF di bawah ini untuk diverifikasi admin via Bot Telegram.</p>
+        <input type="file" id="bukti">
+    </div>
+</div>
+
+<script>
+    function showMenu(menuId) {
+        document.getElementById('main-menu').classList.add('hidden');
+        document.getElementById(menuId).classList.remove('hidden');
+    }
+    function backToMenu() {
+        document.querySelectorAll('.container').forEach(el => el.classList.add('hidden'));
+        document.getElementById('main-menu').classList.remove('hidden');
+        document.querySelector('.container:last-child').classList.remove('hidden');
+    }
+</script>
+</body>
+</html>
